@@ -122,12 +122,9 @@
   .particle{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--neon-blue);animation:floatUp linear infinite;opacity:.4;}
   @keyframes floatUp{0%{transform:translateY(100vh) translateX(0);opacity:0;}10%{opacity:.4;}90%{opacity:.4;}100%{transform:translateY(-10vh) translateX(var(--drift));opacity:0;}}
 
-  /* ═══════════════════════════════════════════════════════════
-     MODAL  ─  3-step flow
-     STEP 1: Form details
-     STEP 2: QR + receipt upload
-     STEP 3: Success (mailto fires)
-  ═══════════════════════════════════════════════════════════ */
+  /* ═══════════════════════════════════════════════════════
+     MODAL – 3-step flow
+  ═══════════════════════════════════════════════════════ */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(2,2,8,.94);z-index:500;align-items:flex-start;justify-content:center;backdrop-filter:blur(10px);padding:16px;overflow-y:auto;}
   .modal-overlay.open{display:flex;}
   .modal-box{background:linear-gradient(145deg,#07071e,#0c0c2e);border:1px solid rgba(0,212,255,.28);width:100%;max-width:580px;position:relative;animation:fadeDown .35s ease;margin:auto;}
@@ -144,7 +141,6 @@
   .step-line{flex:1;height:1px;background:rgba(0,212,255,.15);max-width:60px;}
   .step-line.done{background:var(--green);}
 
-  /* Steps */
   .modal-step{display:none;}
   .modal-step.active{display:block;}
 
@@ -161,7 +157,7 @@
   .form-group textarea{resize:vertical;min-height:68px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 
-  /* ── STEP 2 : QR section ── */
+  /* ── STEP 2: QR ── */
   .qr-section{display:flex;gap:24px;align-items:flex-start;margin-bottom:24px;}
   .qr-box{flex-shrink:0;width:170px;height:170px;border:2px solid rgba(0,212,255,.35);background:rgba(0,212,255,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
   .qr-box img{width:100%;height:100%;object-fit:contain;display:block;}
@@ -169,13 +165,11 @@
   .qr-box .qr-placeholder span{font-size:2.8rem;display:block;margin-bottom:6px;}
   .qr-box .qr-placeholder p{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--text-dim);letter-spacing:.08em;line-height:1.5;}
   .qr-box::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 40%,rgba(0,212,255,.05) 100%);pointer-events:none;}
-  /* animated corner brackets on QR */
   .qr-corner{position:absolute;width:16px;height:16px;border-color:var(--neon-blue);border-style:solid;}
   .qr-corner.tl{top:4px;left:4px;border-width:2px 0 0 2px;}
   .qr-corner.tr{top:4px;right:4px;border-width:2px 2px 0 0;}
   .qr-corner.bl{bottom:4px;left:4px;border-width:0 0 2px 2px;}
   .qr-corner.br{bottom:4px;right:4px;border-width:0 2px 2px 0;}
-
   .qr-info{flex:1;}
   .qr-info-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:#fff;margin-bottom:6px;}
   .qr-amount{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--gold);margin-bottom:4px;filter:drop-shadow(0 0 8px rgba(255,215,0,.5));}
@@ -190,7 +184,6 @@
   .receipt-section-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;animation:blink 1.5s ease-in-out infinite;}
   @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
 
-  /* File drop zone */
   .file-drop{border:1px dashed rgba(0,212,255,.25);padding:18px;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;position:relative;margin-bottom:12px;}
   .file-drop:hover,.file-drop.dragover{border-color:var(--neon-blue);background:rgba(0,212,255,.06);}
   .file-drop input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
@@ -202,8 +195,12 @@
   .file-preview .file-name{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--green);margin-top:6px;word-break:break-all;}
   .file-remove{background:none;border:none;color:var(--neon-pink);font-size:.7rem;font-family:'Space Mono',monospace;cursor:pointer;margin-top:4px;letter-spacing:.06em;}
 
-  /* UTR / Txn ID input */
   .txn-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+  /* ── Formspree status banner ── */
+  .fs-status{display:none;padding:11px 14px;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.06em;line-height:1.6;margin-top:10px;border:1px solid;}
+  .fs-status.submitting{border-color:rgba(0,212,255,.4);background:rgba(0,212,255,.06);color:var(--neon-blue);}
+  .fs-status.error{border-color:rgba(255,45,120,.3);background:rgba(255,45,120,.08);color:var(--neon-pink);}
 
   /* Buttons */
   .btn-next{width:100%;padding:16px;background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));color:#fff;border:none;font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:filter .2s,transform .2s;margin-top:8px;}
@@ -215,7 +212,6 @@
   .btn-back{background:none;border:none;color:var(--text-dim);font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.1em;cursor:pointer;display:flex;align-items:center;gap:6px;margin-bottom:20px;transition:color .2s;}
   .btn-back:hover{color:var(--neon-blue);}
 
-  /* Error */
   .modal-error{display:none;background:rgba(255,45,120,.08);border:1px solid rgba(255,45,120,.3);color:var(--neon-pink);font-family:'Space Mono',monospace;font-size:.66rem;padding:10px 14px;margin-top:10px;letter-spacing:.04em;line-height:1.6;}
   .modal-note{font-family:'Space Mono',monospace;font-size:.59rem;color:var(--text-dim);text-align:center;margin-top:12px;letter-spacing:.07em;line-height:1.7;}
 
@@ -227,7 +223,30 @@
   .success-wrap p{color:var(--text-dim);font-size:.92rem;line-height:1.8;}
   .success-detail{background:rgba(0,255,157,.05);border:1px solid rgba(0,255,157,.2);padding:14px 18px;margin:18px 0;text-align:left;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--text);line-height:2;}
   .success-detail strong{color:var(--green);}
-  .mail-note{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);padding:12px 16px;font-family:'Space Mono',monospace;font-size:.62rem;color:var(--neon-blue);letter-spacing:.06em;line-height:1.7;margin-top:12px;}
+
+  /* Formspree badge */
+  .fs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,157,.08);border:1px solid rgba(0,255,157,.25);padding:8px 14px;margin-bottom:18px;font-family:'Space Mono',monospace;font-size:.62rem;color:var(--green);letter-spacing:.07em;}
+  .fs-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 1.5s ease-in-out infinite;}
+
+  /* Backup methods */
+  .backup-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;text-align:left;}
+  .backup-cards{display:flex;flex-direction:column;gap:9px;margin-bottom:14px;}
+  .backup-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:12px 14px;display:flex;align-items:center;gap:12px;transition:border-color .2s;}
+  .backup-card-icon{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center;}
+  .backup-card-info{flex:1;text-align:left;}
+  .backup-card-title{font-weight:700;font-size:.95rem;color:#fff;letter-spacing:.03em;}
+  .backup-card-sub{font-family:'Space Mono',monospace;font-size:.57rem;color:var(--text-dim);letter-spacing:.05em;margin-top:2px;}
+  .backup-badge{font-family:'Space Mono',monospace;font-size:.52rem;padding:3px 7px;border-radius:2px;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;}
+  .badge-green{background:rgba(0,255,157,.12);color:var(--green);border:1px solid rgba(0,255,157,.25);}
+  .badge-gold{background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.25);}
+  .backup-btn{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.09em;padding:8px 14px;border:none;cursor:pointer;text-transform:uppercase;transition:filter .2s,transform .2s;white-space:nowrap;}
+  .backup-btn:hover{filter:brightness(1.12);transform:translateY(-1px);}
+  .backup-btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;}
+  .backup-btn.copy{background:rgba(123,47,255,.2);border:1px solid rgba(123,47,255,.4);color:#c090ff;}
+  .backup-btn.dl{background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.3);color:var(--gold);}
+  .backup-btn.copied{background:rgba(0,255,157,.15);border:1px solid rgba(0,255,157,.3);color:var(--green);}
+  .ls-notice{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--text-dim);text-align:center;line-height:1.7;padding:10px;border-top:1px solid rgba(255,255,255,.06);margin-top:4px;}
+  .ls-notice button{background:none;border:none;color:var(--neon-blue);cursor:pointer;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.05em;text-decoration:underline;}
 
   /* ── Scroll reveal ── */
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
@@ -254,66 +273,6 @@
     .modal-inner{padding:36px 18px 28px;}
     footer{font-size:.65rem;}
   }
-
-  /* ── STEP 3 BACKUP DELIVERY METHODS ── */
-  .success-wrap .check{font-size:3.6rem;display:block;margin-bottom:10px;animation:popIn .5s cubic-bezier(.36,2,.6,.8) both;}
-  .success-sub{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--text-dim);letter-spacing:.08em;margin-bottom:18px;}
-  .safety-banner{background:rgba(0,255,157,.06);border:1px solid rgba(0,255,157,.25);padding:12px 16px;margin-bottom:18px;display:flex;align-items:center;gap:12px;text-align:left;}
-  .safety-icon{font-size:1.4rem;flex-shrink:0;}
-  .safety-text{font-family:'Space Mono',monospace;font-size:.61rem;color:var(--green);letter-spacing:.05em;line-height:1.6;}
-  .safety-text strong{color:#fff;}
-  .backup-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;text-align:left;}
-  .backup-cards{display:flex;flex-direction:column;gap:9px;margin-bottom:14px;}
-  .backup-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:12px 14px;display:flex;align-items:center;gap:12px;transition:border-color .2s;}
-  .backup-card.primary{border-color:rgba(0,212,255,.35);background:rgba(0,212,255,.05);}
-  .backup-card-icon{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center;}
-  .backup-card-info{flex:1;text-align:left;}
-  .backup-card-title{font-weight:700;font-size:.95rem;color:#fff;letter-spacing:.03em;}
-  .backup-card-sub{font-family:'Space Mono',monospace;font-size:.57rem;color:var(--text-dim);letter-spacing:.05em;margin-top:2px;}
-  .backup-badge{font-family:'Space Mono',monospace;font-size:.52rem;padding:3px 7px;border-radius:2px;letter-spacing:.1em;text-transform:uppercase;flex-shrink:0;}
-  .badge-blue{background:rgba(0,212,255,.15);color:var(--neon-blue);border:1px solid rgba(0,212,255,.3);}
-  .badge-green{background:rgba(0,255,157,.12);color:var(--green);border:1px solid rgba(0,255,157,.25);}
-  .badge-gold{background:rgba(255,215,0,.12);color:var(--gold);border:1px solid rgba(255,215,0,.25);}
-  .backup-btn{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.09em;padding:8px 14px;border:none;cursor:pointer;text-transform:uppercase;transition:filter .2s,transform .2s;white-space:nowrap;}
-  .backup-btn:hover{filter:brightness(1.12);transform:translateY(-1px);}
-  .backup-btn.blue{background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));color:#fff;}
-  .backup-btn.wa{background:linear-gradient(135deg,#25d366,#128c7e);color:#fff;}
-  .backup-btn.copy{background:rgba(123,47,255,.2);border:1px solid rgba(123,47,255,.4);color:#c090ff;}
-  .backup-btn.dl{background:rgba(255,215,0,.15);border:1px solid rgba(255,215,0,.3);color:var(--gold);}
-  .backup-btn.copied{background:rgba(0,255,157,.15);border:1px solid rgba(0,255,157,.3);color:var(--green);}
-  .ls-notice{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--text-dim);text-align:center;line-height:1.7;padding:10px;border-top:1px solid rgba(255,255,255,.06);margin-top:4px;}
-  .ls-notice button{background:none;border:none;color:var(--neon-blue);cursor:pointer;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.05em;text-decoration:underline;}
-
-  /* ── URGENT ACTION ALERT ── */
-  .action-alert{position:relative;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,153,0,.08));border:2px solid var(--gold);padding:18px 20px;margin-bottom:20px;text-align:center;overflow:hidden;}
-  .action-alert::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,215,0,.06),transparent);animation:alertShimmer 2s ease-in-out infinite;}
-  @keyframes alertShimmer{0%,100%{transform:translateX(-100%);}50%{transform:translateX(100%);}}
-  .action-alert-icon{font-size:2rem;display:block;margin-bottom:6px;animation:alertBounce 1s ease-in-out infinite;}
-  @keyframes alertBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
-  .action-alert-title{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.1em;color:var(--gold);line-height:1;margin-bottom:8px;}
-  .action-alert-body{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.07em;line-height:1.9;color:var(--text);}
-  .action-alert-body .highlight{background:rgba(255,215,0,.2);border:1px solid rgba(255,215,0,.4);color:var(--gold);padding:2px 8px;font-weight:700;display:inline-block;margin:0 2px;}
-  .action-alert-body .highlight-green{background:rgba(0,255,157,.15);border:1px solid rgba(0,255,157,.35);color:var(--green);padding:2px 8px;font-weight:700;display:inline-block;margin:0 2px;}
-  .action-alert-steps{display:flex;flex-direction:column;gap:6px;margin-top:12px;text-align:left;}
-  .action-step{display:flex;align-items:flex-start;gap:10px;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--text-dim);letter-spacing:.05em;}
-  .action-step-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#000;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;margin-top:1px;}
-  .action-step strong{color:#fff;}
-
-
-  /* ── URGENT ACTION ALERT ── */
-  .action-alert{position:relative;background:linear-gradient(135deg,rgba(255,215,0,.12),rgba(255,153,0,.08));border:2px solid var(--gold);padding:18px 20px;margin-bottom:20px;text-align:center;overflow:hidden;}
-  .action-alert::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,215,0,.07),transparent);animation:alertShimmer 2.5s ease-in-out infinite;}
-  @keyframes alertShimmer{0%{transform:translateX(-100%);}100%{transform:translateX(100%);}}
-  .action-alert-icon{font-size:2rem;display:block;margin-bottom:6px;animation:alertBounce 1.2s ease-in-out infinite;}
-  @keyframes alertBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
-  .action-alert-title{font-family:'Bebas Neue',sans-serif;font-size:1.7rem;letter-spacing:.1em;color:var(--gold);line-height:1;margin-bottom:10px;}
-  .action-alert-body{font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.06em;line-height:2;color:var(--text);}
-  .hl-gold{background:rgba(255,215,0,.2);border:1px solid rgba(255,215,0,.5);color:var(--gold);padding:2px 8px;font-weight:700;display:inline-block;margin:1px 2px;letter-spacing:.08em;}
-  .hl-green{background:rgba(0,255,157,.15);border:1px solid rgba(0,255,157,.4);color:var(--green);padding:2px 8px;font-weight:700;display:inline-block;margin:1px 2px;letter-spacing:.08em;}
-  .action-steps{display:flex;flex-direction:column;gap:7px;margin-top:14px;text-align:left;}
-  .action-step{display:flex;align-items:flex-start;gap:10px;font-family:'Space Mono',monospace;font-size:.64rem;color:var(--text-dim);letter-spacing:.05em;line-height:1.5;}
-  .action-step-num{width:22px;height:22px;border-radius:50%;background:var(--gold);color:#000;font-weight:700;font-size:.65rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;}
-  .action-step strong{color:#fff;}
 </style>
 </head>
 <body>
@@ -487,7 +446,6 @@
     <!-- ── STEP 1 : Team Details ── -->
     <div class="modal-step active" id="step1">
       <div class="modal-inner">
-        <!-- Step indicator -->
         <div class="step-indicator">
           <div class="step-dot active" id="dot1">1</div>
           <div class="step-line" id="line1"></div>
@@ -495,10 +453,8 @@
           <div class="step-line" id="line2"></div>
           <div class="step-dot" id="dot3">✓</div>
         </div>
-
         <div class="modal-title">Team Details</div>
         <div class="modal-sub">Step 1 of 2 &nbsp;·&nbsp; vector.io Hackathon 2026</div>
-
         <div class="form-group">
           <label>Team Name *</label>
           <input type="text" id="f_team" placeholder="Your awesome team name">
@@ -535,7 +491,6 @@
           <label>Project Idea (Brief)</label>
           <textarea id="f_idea" placeholder="Describe your project idea in 2-3 sentences..."></textarea>
         </div>
-
         <button class="btn-next" id="btn1" onclick="goToStep2()">
           Next — Pay ₹349 &nbsp;→
         </button>
@@ -554,22 +509,13 @@
           <div class="step-line" id="line2b"></div>
           <div class="step-dot" id="dot3b">✓</div>
         </div>
-
         <button class="btn-back" onclick="goToStep1()">← Back</button>
-
-        <div class="modal-title">Pay ₹249</div>
-        <div class="modal-sub">Step 2 of 2 &nbsp;·&nbsp; Scan · Pay · Upload Receipt</div>
+        <div class="modal-title">Pay ₹349</div>
+        <div class="modal-sub">Step 2 of 2 &nbsp;·&nbsp; Scan · Pay · Submit</div>
 
         <!-- QR + Instructions -->
         <div class="qr-section">
           <div class="qr-box" id="qrBox">
-            <!--
-              ════════════════════════════════════════════════
-              ORGANIZER: Replace the src below with your actual
-              UPI QR code image file (e.g. upi-qr.png).
-              Place the image in the same folder as this HTML.
-              ════════════════════════════════════════════════
-            -->
             <img src="upi-qr.png" alt="UPI QR Code" id="qrImg"
                  onerror="this.style.display='none';document.getElementById('qrFallback').style.display='block'">
             <div class="qr-placeholder" id="qrFallback" style="display:none">
@@ -588,7 +534,7 @@
             <ul class="qr-steps">
               <li>Open any UPI app (GPay, PhonePe, Paytm…)</li>
               <li>Scan the QR or use the UPI ID above</li>
-              <li>Pay exactly <strong style="color:var(--gold)">₹249</strong></li>
+              <li>Pay exactly <strong style="color:var(--gold)">₹349</strong></li>
               <li>Screenshot your payment receipt</li>
               <li>Upload it below &amp; submit</li>
             </ul>
@@ -598,7 +544,6 @@
         <!-- Receipt upload -->
         <div class="receipt-section">
           <div class="receipt-section-title">Upload Payment Receipt</div>
-
           <div class="file-drop" id="fileDrop">
             <input type="file" id="receiptFile" accept="image/*,.pdf" onchange="handleFile(this)">
             <div class="file-drop-icon">📎</div>
@@ -613,8 +558,6 @@
             <div class="file-name" id="fileName"></div>
             <button class="file-remove" onclick="removeFile()">✕ Remove</button>
           </div>
-
-          <!-- Transaction details -->
           <div class="txn-row">
             <div class="form-group">
               <label>UTR / Transaction ID *</label>
@@ -640,73 +583,53 @@
           </div>
         </div>
 
+        <!-- ── Formspree note ── -->
+        <div style="background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.2);padding:10px 14px;margin-bottom:12px;font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-dim);letter-spacing:.06em;line-height:1.7;">
+          ⚡ <strong style="color:var(--neon-blue)">Instant submission</strong> — Your registration is sent directly to the organizers via Formspree. No email app needed.
+        </div>
+
         <button class="btn-submit" id="btn2" onclick="submitRegistration()">
-          ✅ &nbsp;Confirm &amp; Send Registration
+          ✅ &nbsp;Confirm &amp; Submit Registration
         </button>
+        <div class="fs-status" id="fsStatus"></div>
         <div class="modal-error" id="err2"></div>
         <p class="modal-note">
-          After clicking, your email app will open with all details pre-filled.<br>
-          Just hit <strong style="color:var(--neon-blue)">Send</strong> — and you're done!
+          Queries: <strong style="color:var(--neon-blue)">Sandesh 8668916936</strong> · <strong style="color:var(--neon-blue)">Tejas 80079 53204</strong>
         </p>
       </div>
     </div>
 
-    <!-- ── STEP 3 : Success + All Backup Methods ── -->
+    <!-- ── STEP 3 : Success ── -->
     <div class="modal-step" id="step3">
       <div class="modal-inner">
         <div class="success-wrap">
-          <span class="check">&#127881;</span>
-          <h3>Details Saved!</h3>
-          <p class="success-sub">Saved to browser storage &middot; Complete your registration below</p>
+          <span class="check">🎉</span>
+          <h3>Registration Submitted!</h3>
 
-          <!-- &#9888; URGENT ACTION ALERT -->
-          <div class="action-alert">
-            <span class="action-alert-icon">&#128232;</span>
-            <div class="action-alert-title">&#9888;&#65039; Action Required to Confirm</div>
-            <div class="action-alert-body">
-              Your details are saved &mdash; but you are
-              <span class="hl-gold">NOT REGISTERED YET</span><br>
-              Click <span class="hl-gold">Open Email App</span> below, then press
-              <span class="hl-green">&#9654; SEND</span> in your mail app.
-            </div>
-            <div class="action-steps">
-              <div class="action-step"><div class="action-step-num">1</div><span>Click <strong>&ldquo;Open Email App &rarr;&rdquo;</strong> in the blue button below</span></div>
-              <div class="action-step"><div class="action-step-num">2</div><span>Your email app opens &mdash; <strong>all details are already filled</strong></span></div>
-              <div class="action-step"><div class="action-step-num">3</div><span>Press the <strong>SEND</strong> button in your email app &mdash; done!</span></div>
-            </div>
+          <!-- Formspree success badge -->
+          <div class="fs-badge">
+            <div class="fs-badge-dot"></div>
+            ✅ Sent to organizers via Formspree — no extra steps needed
           </div>
+
+          <p style="margin-bottom:8px;">Your registration has been <strong style="color:var(--green)">successfully received</strong> by the vector.io team. You'll be contacted on your email/phone.</p>
 
           <div class="success-detail" id="successDetail"></div>
 
-          <div class="safety-banner">
-            <div class="safety-icon">&#128737;&#65039;</div>
-            <div class="safety-text">
-              <strong>Nothing is lost.</strong> All details are saved in this browser. If email does not open, use WhatsApp or Copy below as alternatives.
-            </div>
-          </div>
-
-          <div class="backup-label">Send to organizer via:</div>
+          <!-- Backup options -->
+          <div class="backup-label" style="margin-top:16px;">Optional: also send via backup method</div>
           <div class="backup-cards">
-            <div class="backup-card primary">
-              <div class="backup-card-icon">&#128231;</div>
-              <div class="backup-card-info">
-                <div class="backup-card-title">Email App</div>
-                <div class="backup-card-sub">Opens Gmail / Outlook &mdash; then press <strong style="color:var(--green)">SEND</strong></div>
-              </div>
-              <span class="backup-badge badge-blue">Recommended</span>
-              <button class="backup-btn blue" onclick="doEmail()" style="margin-left:8px;">Open &rarr;</button>
-            </div>
             <div class="backup-card">
-              <div class="backup-card-icon">&#128172;</div>
+              <div class="backup-card-icon">💬</div>
               <div class="backup-card-info">
                 <div class="backup-card-title">WhatsApp</div>
-                <div class="backup-card-sub">Message organizer with all details</div>
+                <div class="backup-card-sub">Send details + receipt screenshot to organizer</div>
               </div>
               <span class="backup-badge badge-green">Instant</span>
-              <button class="backup-btn wa" onclick="doWhatsApp()" style="margin-left:8px;">Open &rarr;</button>
+              <button class="backup-btn wa" onclick="doWhatsApp()" style="margin-left:8px;">Open →</button>
             </div>
             <div class="backup-card">
-              <div class="backup-card-icon">&#128203;</div>
+              <div class="backup-card-icon">📋</div>
               <div class="backup-card-info">
                 <div class="backup-card-title">Copy All Details</div>
                 <div class="backup-card-sub">Paste into any chat, email, or notes</div>
@@ -714,10 +637,10 @@
               <button class="backup-btn copy" id="copyBtn" onclick="doCopy()" style="margin-left:auto;">Copy</button>
             </div>
             <div class="backup-card">
-              <div class="backup-card-icon">&#128190;</div>
+              <div class="backup-card-icon">💾</div>
               <div class="backup-card-info">
                 <div class="backup-card-title">Download .txt Backup</div>
-                <div class="backup-card-sub">Save permanently to your device</div>
+                <div class="backup-card-sub">Save a copy to your device</div>
               </div>
               <span class="backup-badge badge-gold">Offline</span>
               <button class="backup-btn dl" onclick="doDownload()" style="margin-left:8px;">Save</button>
@@ -725,10 +648,10 @@
           </div>
 
           <div class="ls-notice">
-            &#10003; Auto-saved in browser storage &nbsp;&middot;&nbsp;
-            <button onclick="showSaved()">view saved entries</button>
-            &nbsp;&middot;&nbsp;
-            <button onclick="clearSaved()">clear storage</button>
+            ✓ Also saved locally in browser &nbsp;·&nbsp;
+            <button onclick="showSaved()">view saved</button>
+            &nbsp;·&nbsp;
+            <button onclick="clearSaved()">clear</button>
           </div>
 
           <button onclick="closeModal()" style="margin-top:14px;width:100%;padding:11px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--text-dim);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;cursor:pointer;">
@@ -743,10 +666,13 @@
 
 <script>
 // ─────────────────────────────────────────────────────────────────────────────
-//  CONFIG — change UPI ID here
+//  CONFIG
 // ─────────────────────────────────────────────────────────────────────────────
-const ORGANIZER_EMAIL = 'sandeshshingankar8@gmail.com';
-const UPI_ID          = 'sandeshshingankar8@okicici'; // ← change to your actual UPI ID
+const FORMSPREE_URL       = 'https://formspree.io/f/xreyopoe';
+const UPI_ID              = 'sandeshshingankar8@okicici';
+const ORGANIZER_WHATSAPP  = '918668916936';
+const LS_KEY              = 'vectorio_registrations';
+
 document.getElementById('qrUpiId').textContent = 'UPI: ' + UPI_ID;
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -754,7 +680,7 @@ document.getElementById('qrUpiId').textContent = 'UPI: ' + UPI_ID;
 // ─────────────────────────────────────────────────────────────────────────────
 let formData    = {};
 let receiptFile = null;
-let mailtoStr   = '';
+let savedEntry  = {};
 
 // ─────────────────────────────────────────────────────────────────────────────
 //  PARTICLES
@@ -805,7 +731,6 @@ document.getElementById('regModal').addEventListener('click',function(e){ if(e.t
 function showStep(id){
   document.querySelectorAll('.modal-step').forEach(s=>s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  // scroll modal to top
   const box = document.querySelector('.modal-box');
   if(box) box.scrollTop = 0;
 }
@@ -830,7 +755,10 @@ function handleFile(input){
   document.getElementById('fileDrop').style.display = 'none';
   if(file.type.startsWith('image/')){
     const reader = new FileReader();
-    reader.onload = e => { document.getElementById('previewImg').src = e.target.result; document.getElementById('previewImg').style.display='block'; };
+    reader.onload = e => {
+      document.getElementById('previewImg').src = e.target.result;
+      document.getElementById('previewImg').style.display='block';
+    };
     reader.readAsDataURL(file);
   } else {
     document.getElementById('previewImg').style.display = 'none';
@@ -845,7 +773,6 @@ function removeFile(){
   document.getElementById('previewImg').src='';
 }
 
-// Drag & drop
 const drop = document.getElementById('fileDrop');
 drop.addEventListener('dragover', e=>{ e.preventDefault(); drop.classList.add('dragover'); });
 drop.addEventListener('dragleave', ()=> drop.classList.remove('dragover'));
@@ -874,7 +801,6 @@ function goToStep2(){
 
   formData = { team, leader, size, email, phone, college, idea: idea||'Not provided' };
 
-  // Pre-fill payment datetime to now
   const now = new Date();
   const local = new Date(now - now.getTimezoneOffset()*60000).toISOString().slice(0,16);
   document.getElementById('f_paidAt').value = local;
@@ -884,13 +810,115 @@ function goToStep2(){
 
 function goToStep1(){ showStep('step1'); }
 
-// ═══════════════════════════════════════════════════════════════
-//  SUBMIT → SAVE LOCALLY → SHOW STEP 3
-// ═══════════════════════════════════════════════════════════════
-const LS_KEY = 'vectorio_registrations';
-const ORGANIZER_WHATSAPP = '918668916936'; // country code + number
-let savedEntry = {};
+// ─────────────────────────────────────────────────────────────────────────────
+//  SUBMIT → FORMSPREE (multipart/form-data so receipt file is attached)
+// ─────────────────────────────────────────────────────────────────────────────
+async function submitRegistration(){
+  clearErr('err2');
 
+  const utr    = document.getElementById('f_utr').value.trim();
+  const app    = document.getElementById('f_app').value || 'Not specified';
+  const paidAt = document.getElementById('f_paidAt').value;
+
+  if(!utr)             { return showErr('err2','Please enter your UTR / Transaction ID from the payment receipt.'); }
+  if(utr.length < 6)   { return showErr('err2','UTR / Transaction ID seems too short. Please double-check.'); }
+  if(!receiptFile)     { return showErr('err2','Please upload your payment receipt screenshot.'); }
+
+  const paidAtDisplay = paidAt
+    ? new Date(paidAt).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'short'})
+    : 'Not specified';
+
+  savedEntry = {
+    ...formData, utr, app, paidAtDisplay,
+    receiptName: receiptFile ? receiptFile.name : 'N/A',
+    submittedAt: new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'short'}),
+  };
+
+  // ── Build FormData for Formspree (supports file attachment) ──────────────
+  const fd = new FormData();
+  fd.append('_subject',     `[vector.io Hackathon 2026] Registration – ${savedEntry.team}`);
+  fd.append('team_name',    savedEntry.team);
+  fd.append('leader_name',  savedEntry.leader);
+  fd.append('team_size',    savedEntry.size);
+  fd.append('email',        savedEntry.email);
+  fd.append('phone',        savedEntry.phone);
+  fd.append('college',      savedEntry.college);
+  fd.append('project_idea', savedEntry.idea);
+  fd.append('utr_txn_id',   savedEntry.utr);
+  fd.append('payment_app',  savedEntry.app);
+  fd.append('payment_time', savedEntry.paidAtDisplay);
+  fd.append('upi_id',       UPI_ID);
+  fd.append('amount_paid',  '₹349');
+  fd.append('submitted_at', savedEntry.submittedAt);
+  if(receiptFile) fd.append('payment_receipt', receiptFile, receiptFile.name);
+
+  // ── Show loading state ───────────────────────────────────────────────────
+  const btn = document.getElementById('btn2');
+  btn.disabled = true;
+  btn.innerHTML = '⏳ &nbsp;Submitting…';
+
+  const fsStatus = document.getElementById('fsStatus');
+  fsStatus.className = 'fs-status submitting';
+  fsStatus.textContent = '⏳ Sending your registration to the organizers via Formspree…';
+  fsStatus.style.display = 'block';
+
+  try {
+    const res = await fetch(FORMSPREE_URL, {
+      method:  'POST',
+      headers: { 'Accept': 'application/json' },
+      body:    fd
+    });
+
+    if(res.ok){
+      // ── SUCCESS ────────────────────────────────────────────────────────
+      // Save to localStorage as backup
+      try {
+        const existing = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+        existing.push(savedEntry);
+        localStorage.setItem(LS_KEY, JSON.stringify(existing));
+      } catch(e){ console.warn('localStorage unavailable', e); }
+
+      // Populate success card
+      document.getElementById('successDetail').innerHTML =
+        `<strong>Team</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.team}<br>`+
+        `<strong>Leader</strong> &nbsp;&nbsp;&nbsp; ${savedEntry.leader}<br>`+
+        `<strong>Email</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.email}<br>`+
+        `<strong>Phone</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.phone}<br>`+
+        `<strong>College</strong> &nbsp;&nbsp;&nbsp;${savedEntry.college}<br>`+
+        `<strong>UTR/Txn</strong> &nbsp;&nbsp;${savedEntry.utr}<br>`+
+        `<strong>Paid via</strong> &nbsp;&nbsp;${savedEntry.app}<br>`+
+        `<strong>Amount</strong> &nbsp;&nbsp;&nbsp; ₹349<br>`+
+        `<strong>Receipt</strong> &nbsp;&nbsp;&nbsp;${savedEntry.receiptName}`;
+
+      showStep('step3');
+
+    } else {
+      // ── FORMSPREE ERROR (rate limit, config issue, etc.) ───────────────
+      const data = await res.json().catch(()=>({}));
+      const msg = (data.errors && data.errors[0] && data.errors[0].message)
+        || `Submission failed (HTTP ${res.status}). Please try WhatsApp or email below.`;
+      fsStatus.style.display = 'none';
+      showErr('err2', msg);
+      btn.disabled = false;
+      btn.innerHTML = '✅ &nbsp;Confirm &amp; Submit Registration';
+    }
+
+  } catch(networkErr){
+    // ── NETWORK ERROR (offline, CORS, etc.) ───────────────────────────────
+    fsStatus.style.display = 'none';
+    showErr('err2',
+      'Network error — check your internet connection and try again. ' +
+      'Or use WhatsApp button below to send your details manually.'
+    );
+    btn.disabled = false;
+    btn.innerHTML = '✅ &nbsp;Confirm &amp; Submit Registration';
+    console.error('Formspree network error:', networkErr);
+  }
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  BACKUP METHODS
+// ─────────────────────────────────────────────────────────────────────────────
 function buildText(e){
   return `===========================================
   VECTOR.IO HACKATHON 2026 — REGISTRATION
@@ -912,7 +940,7 @@ ${e.idea}
 ─────────────────────────
 PAYMENT DETAILS
 ─────────────────────────
-Amount Paid  : ₹249
+Amount Paid  : ₹349
 UPI ID       : ${UPI_ID}
 UTR / Txn ID : ${e.utr}
 Payment App  : ${e.app}
@@ -922,56 +950,6 @@ Receipt File : ${e.receiptName}
 ─────────────────────────
 Submitted    : ${e.submittedAt}
 ===========================================`;
-}
-
-function submitRegistration(){
-  clearErr('err2');
-  const utr    = document.getElementById('f_utr').value.trim();
-  const app    = document.getElementById('f_app').value || 'Not specified';
-  const paidAt = document.getElementById('f_paidAt').value;
-
-  if(!utr){ return showErr('err2','Please enter your UTR / Transaction ID from the payment receipt.'); }
-  if(utr.length < 6){ return showErr('err2','UTR / Transaction ID seems too short. Please double-check.'); }
-  if(!receiptFile){ return showErr('err2','Please upload your payment receipt screenshot.'); }
-
-  const paidAtDisplay = paidAt
-    ? new Date(paidAt).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'short'})
-    : 'Not specified';
-
-  savedEntry = {
-    ...formData, utr, app, paidAtDisplay,
-    receiptName: receiptFile ? receiptFile.name : 'N/A',
-    submittedAt: new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'short'}),
-  };
-
-  // Save to localStorage immediately (nothing lost even if mail fails)
-  try {
-    const existing = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
-    existing.push(savedEntry);
-    localStorage.setItem(LS_KEY, JSON.stringify(existing));
-  } catch(e){ console.warn('localStorage unavailable', e); }
-
-  // Populate success summary
-  document.getElementById('successDetail').innerHTML =
-    `<strong>Team</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.team}<br>`+
-    `<strong>Leader</strong> &nbsp;&nbsp;&nbsp; ${savedEntry.leader}<br>`+
-    `<strong>Email</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.email}<br>`+
-    `<strong>Phone</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.phone}<br>`+
-    `<strong>College</strong> &nbsp;&nbsp;&nbsp;${savedEntry.college}<br>`+
-    `<strong>UTR/Txn</strong> &nbsp;&nbsp;${savedEntry.utr}<br>`+
-    `<strong>Paid via</strong> &nbsp;&nbsp;${savedEntry.app}<br>`+
-    `<strong>Amount</strong> &nbsp;&nbsp;&nbsp; ₹249`;
-
-  showStep('step3');
-  // Auto-attempt email silently
-  setTimeout(doEmail, 400);
-}
-
-// ── 4 delivery methods ──────────────────────────────────────────
-function doEmail(){
-  const subject = `[vector.io Hackathon 2026] Registration – ${savedEntry.team}`;
-  const body = buildText(savedEntry) + `\n\n⚠ Please also attach the receipt screenshot: ${savedEntry.receiptName}`;
-  window.location.href = `mailto:${ORGANIZER_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 function doWhatsApp(){
@@ -998,9 +976,12 @@ function doCopy(){
   const text = buildText(savedEntry);
   const btn = document.getElementById('copyBtn');
   const finish = () => { btn.textContent='✓ Copied!'; btn.className='backup-btn copied'; setTimeout(()=>{btn.textContent='Copy';btn.className='backup-btn copy';},2500); };
-  navigator.clipboard ? navigator.clipboard.writeText(text).then(finish).catch(()=>{
-    const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);finish();
-  }) : (()=>{const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);finish();})();
+  navigator.clipboard
+    ? navigator.clipboard.writeText(text).then(finish).catch(()=>{ fallbackCopy(text); finish(); })
+    : fallbackCopy(text, finish);
+}
+function fallbackCopy(text, cb){
+  const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);if(cb)cb();
 }
 
 function doDownload(){
@@ -1011,7 +992,6 @@ function doDownload(){
   a.click(); URL.revokeObjectURL(a.href);
 }
 
-// ── LocalStorage viewer ─────────────────────────────────────────
 function showSaved(){
   try{
     const entries = JSON.parse(localStorage.getItem(LS_KEY)||'[]');

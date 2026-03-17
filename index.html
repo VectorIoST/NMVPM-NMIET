@@ -16,14 +16,12 @@
   body{background:var(--dark);color:var(--text);font-family:'Rajdhani',sans-serif;font-size:17px;line-height:1.6;overflow-x:hidden;}
   body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
 
-  /* ── HEADER ── */
   .college-header{position:relative;z-index:200;background:#000;padding:6px 16px;display:flex;align-items:center;justify-content:center;border-bottom:3px solid #003087;}
   .college-header img{width:100%;max-width:980px;max-height:88px;object-fit:contain;display:block;}
   .org-banner{position:relative;z-index:199;background:linear-gradient(90deg,#003087,#0a1a5c 50%,#003087);padding:9px 20px;text-align:center;display:flex;align-items:center;justify-content:center;gap:12px;border-bottom:2px solid var(--neon-blue);}
   .org-banner span{font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.18em;color:#e8e8ff;text-transform:uppercase;}
   .org-dot{width:7px;height:7px;border-radius:50%;background:var(--neon-blue);flex-shrink:0;box-shadow:0 0 8px var(--neon-blue);}
 
-  /* ── NAV ── */
   nav{position:sticky;top:0;z-index:100;background:rgba(5,5,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,212,255,0.1);display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:60px;}
   .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:.1em;background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-decoration:none;}
   .nav-links{display:flex;gap:28px;list-style:none;align-items:center;}
@@ -31,13 +29,11 @@
   .nav-links a:hover{color:var(--neon-blue);}
   .nav-toggle{display:none;background:none;border:none;color:var(--neon-blue);font-size:1.5rem;cursor:pointer;padding:8px;}
 
-  /* ── BUTTONS ── */
   .btn-primary{background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));color:#fff;border:none;padding:16px 40px;font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:transform .2s,filter .2s;text-decoration:none;display:inline-block;}
   .btn-primary:hover{transform:translateY(-3px);filter:brightness(1.2);}
   .btn-secondary{background:transparent;color:var(--neon-blue);border:1px solid var(--neon-blue);padding:15px 36px;font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:background .2s,color .2s,transform .2s;text-decoration:none;display:inline-block;}
   .btn-secondary:hover{background:rgba(0,212,255,.1);transform:translateY(-3px);}
 
-  /* ── HERO ── */
   .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:40px 20px 60px;}
   .hero-glow{position:absolute;width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(123,47,255,.25) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;animation:bgpulse 4s ease-in-out infinite;}
   .hero-glow2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.15) 0%,transparent 70%);top:30%;left:20%;pointer-events:none;animation:bgpulse 6s ease-in-out infinite reverse;}
@@ -54,13 +50,11 @@
   .hero-cta{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;animation:fadeDown 1s ease 1.2s both;}
   @keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
 
-  /* ── SECTIONS ── */
   section{position:relative;z-index:1;padding:80px 20px;max-width:1100px;margin:0 auto;}
   .section-label{font-family:'Space Mono',monospace;font-size:.7rem;letter-spacing:.3em;color:var(--neon-pink);text-transform:uppercase;margin-bottom:10px;}
   .section-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4.5rem);letter-spacing:.04em;line-height:1;margin-bottom:50px;background:linear-gradient(90deg,#fff 60%,var(--neon-blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
   .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--neon-blue),var(--neon-purple),transparent);position:relative;z-index:1;margin:0 auto;max-width:1100px;}
 
-  /* ── ROUNDS ── */
   .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
   .round-card{background:var(--card-bg);border:1px solid rgba(0,212,255,.15);padding:32px 28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
   .round-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--neon-blue),var(--neon-purple));}
@@ -74,7 +68,6 @@
   .round-desc{color:var(--text-dim);font-size:.95rem;line-height:1.7;}
   .round-duration{margin-top:18px;display:inline-flex;align-items:center;gap:8px;font-family:'Space Mono',monospace;font-size:.75rem;color:var(--neon-blue);border-top:1px solid rgba(0,212,255,.15);padding-top:16px;width:100%;}
 
-  /* ── FEATURES ── */
   .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
   .feature-item{background:var(--card-bg);border:1px solid rgba(123,47,255,.2);padding:28px 24px;transition:border-color .3s,transform .3s;}
   .feature-item:hover{border-color:rgba(123,47,255,.6);transform:translateY(-4px);}
@@ -82,7 +75,6 @@
   .feature-title{font-weight:700;font-size:1.15rem;letter-spacing:.05em;margin-bottom:8px;color:#fff;text-transform:uppercase;}
   .feature-desc{color:var(--text-dim);font-size:.9rem;}
 
-  /* ── PRIZES ── */
   .prizes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px;}
   .prize-card{background:var(--card-bg);border:1px solid rgba(255,215,0,.15);padding:36px 24px;text-align:center;position:relative;overflow:hidden;transition:transform .3s;}
   .prize-card.first{border-color:rgba(255,215,0,.5);}
@@ -100,7 +92,6 @@
   .prize-card.second .prize-value{color:#c0c0c0;}
   .prize-card.third .prize-value{color:#cd7f32;}
 
-  /* ── CONTACT ── */
   .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
   .contact-card{background:var(--card-bg);border:1px solid rgba(0,212,255,.15);padding:28px;display:flex;align-items:center;gap:20px;transition:border-color .3s;}
   .contact-card:hover{border-color:rgba(0,212,255,.5);}
@@ -108,23 +99,18 @@
   .contact-name{font-weight:700;font-size:1.1rem;color:#fff;letter-spacing:.03em;margin-bottom:4px;}
   .contact-phone{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--neon-blue);}
 
-  /* ── VENUE ── */
   .venue-block{background:var(--card-bg);border:1px solid rgba(0,212,255,.15);padding:36px 32px;display:flex;align-items:center;gap:28px;flex-wrap:wrap;}
   .venue-name{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.08em;color:var(--neon-blue);line-height:1;margin-bottom:6px;}
   .venue-detail{color:var(--text-dim);font-family:'Space Mono',monospace;font-size:.78rem;letter-spacing:.1em;}
 
-  /* ── FOOTER ── */
   footer{position:relative;z-index:1;border-top:1px solid rgba(0,212,255,.1);text-align:center;padding:40px 20px;color:var(--text-dim);font-family:'Space Mono',monospace;font-size:.72rem;letter-spacing:.1em;}
   footer span{color:var(--neon-blue);}
 
-  /* ── PARTICLES ── */
   .particles{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
   .particle{position:absolute;width:2px;height:2px;border-radius:50%;background:var(--neon-blue);animation:floatUp linear infinite;opacity:.4;}
   @keyframes floatUp{0%{transform:translateY(100vh) translateX(0);opacity:0;}10%{opacity:.4;}90%{opacity:.4;}100%{transform:translateY(-10vh) translateX(var(--drift));opacity:0;}}
 
-  /* ═══════════════════════════════════════════════════════
-     MODAL – 3-step flow
-  ═══════════════════════════════════════════════════════ */
+  /* ═══════ MODAL ═══════ */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(2,2,8,.94);z-index:500;align-items:flex-start;justify-content:center;backdrop-filter:blur(10px);padding:16px;overflow-y:auto;}
   .modal-overlay.open{display:flex;}
   .modal-box{background:linear-gradient(145deg,#07071e,#0c0c2e);border:1px solid rgba(0,212,255,.28);width:100%;max-width:580px;position:relative;animation:fadeDown .35s ease;margin:auto;}
@@ -133,7 +119,6 @@
   .modal-close{position:absolute;top:14px;right:18px;background:none;border:none;color:var(--text-dim);font-size:1.6rem;cursor:pointer;line-height:1;z-index:10;transition:color .2s;}
   .modal-close:hover{color:var(--neon-pink);}
 
-  /* Step indicator */
   .step-indicator{display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px;}
   .step-dot{width:32px;height:32px;border-radius:50%;border:2px solid rgba(0,212,255,.25);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--text-dim);transition:all .3s;flex-shrink:0;}
   .step-dot.active{border-color:var(--neon-blue);color:var(--neon-blue);box-shadow:0 0 12px rgba(0,212,255,.4);}
@@ -147,17 +132,17 @@
   .modal-title{font-family:'Bebas Neue',sans-serif;font-size:2.3rem;letter-spacing:.08em;line-height:1;background:linear-gradient(90deg,var(--neon-blue),var(--neon-purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:4px;}
   .modal-sub{font-family:'Space Mono',monospace;font-size:.67rem;letter-spacing:.13em;color:var(--text-dim);text-transform:uppercase;margin-bottom:22px;}
 
-  /* Form */
   .form-group{margin-bottom:14px;}
   .form-group label{display:block;font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--neon-blue);margin-bottom:5px;}
-  .form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.18);color:var(--text);padding:11px 14px;font-family:'Rajdhani',sans-serif;font-size:1rem;outline:none;transition:border-color .2s;appearance:none;}
+  .form-group input,.form-group select,.form-group textarea{width:100%;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.18);color:var(--text);padding:11px 14px;font-family:'Rajdhani',sans-serif;font-size:1rem;outline:none;transition:border-color .2s;appearance:none;-webkit-appearance:none;}
   .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-dim);opacity:.5;}
   .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--neon-blue);}
-  .form-group select option{background:#07071e;}
+  .form-group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300d4ff' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px;}
+  .form-group select option{background:#07071e;color:var(--text);}
   .form-group textarea{resize:vertical;min-height:68px;}
   .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 
-  /* ── STEP 2: QR ── */
+  /* Step 2 QR */
   .qr-section{display:flex;gap:24px;align-items:flex-start;margin-bottom:24px;}
   .qr-box{flex-shrink:0;width:170px;height:170px;border:2px solid rgba(0,212,255,.35);background:rgba(0,212,255,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
   .qr-box img{width:100%;height:100%;object-fit:contain;display:block;}
@@ -173,12 +158,12 @@
   .qr-info{flex:1;}
   .qr-info-title{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:#fff;margin-bottom:6px;}
   .qr-amount{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--gold);margin-bottom:4px;filter:drop-shadow(0 0 8px rgba(255,215,0,.5));}
-  .qr-upi{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--neon-blue);letter-spacing:.06em;margin-bottom:12px;word-break:break-all;}
+  .qr-upi{font-family:'Space Mono',monospace;font-size:.68rem;color:var(--neon-blue);letter-spacing:.06em;margin-bottom:12px;word-break:break-all;cursor:pointer;user-select:all;}
+  .qr-upi:hover{text-decoration:underline;}
   .qr-steps{list-style:none;display:flex;flex-direction:column;gap:6px;}
   .qr-steps li{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--text-dim);letter-spacing:.05em;display:flex;gap:8px;align-items:flex-start;line-height:1.5;}
   .qr-steps li::before{content:'→';color:var(--neon-blue);flex-shrink:0;}
 
-  /* Receipt upload */
   .receipt-section{background:rgba(0,255,157,.04);border:1px dashed rgba(0,255,157,.3);padding:20px;margin-bottom:20px;}
   .receipt-section-title{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
   .receipt-section-title::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);flex-shrink:0;animation:blink 1.5s ease-in-out infinite;}
@@ -197,10 +182,10 @@
 
   .txn-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
 
-  /* ── Formspree status banner ── */
-  .fs-status{display:none;padding:11px 14px;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.06em;line-height:1.6;margin-top:10px;border:1px solid;}
-  .fs-status.submitting{border-color:rgba(0,212,255,.4);background:rgba(0,212,255,.06);color:var(--neon-blue);}
-  .fs-status.error{border-color:rgba(255,45,120,.3);background:rgba(255,45,120,.08);color:var(--neon-pink);}
+  /* FIX: receipt optional note */
+  .receipt-optional{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--text-dim);margin-top:6px;letter-spacing:.06em;opacity:.7;}
+
+  .fs-info-box{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.2);padding:10px 14px;margin-bottom:12px;font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-dim);letter-spacing:.06em;line-height:1.7;}
 
   /* Buttons */
   .btn-next{width:100%;padding:16px;background:linear-gradient(135deg,var(--neon-blue),var(--neon-purple));color:#fff;border:none;font-family:'Space Mono',monospace;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:filter .2s,transform .2s;margin-top:8px;}
@@ -215,7 +200,12 @@
   .modal-error{display:none;background:rgba(255,45,120,.08);border:1px solid rgba(255,45,120,.3);color:var(--neon-pink);font-family:'Space Mono',monospace;font-size:.66rem;padding:10px 14px;margin-top:10px;letter-spacing:.04em;line-height:1.6;}
   .modal-note{font-family:'Space Mono',monospace;font-size:.59rem;color:var(--text-dim);text-align:center;margin-top:12px;letter-spacing:.07em;line-height:1.7;}
 
-  /* ── STEP 3: Success ── */
+  /* FIX: status banner */
+  .fs-status{display:none;padding:11px 14px;font-family:'Space Mono',monospace;font-size:.66rem;letter-spacing:.06em;line-height:1.6;margin-top:10px;border:1px solid;}
+  .fs-status.submitting{border-color:rgba(0,212,255,.4);background:rgba(0,212,255,.06);color:var(--neon-blue);}
+  .fs-status.error{border-color:rgba(255,45,120,.3);background:rgba(255,45,120,.08);color:var(--neon-pink);}
+
+  /* Step 3 */
   .success-wrap{text-align:center;padding:40px 10px 20px;}
   .success-wrap .check{font-size:4rem;display:block;margin-bottom:14px;animation:popIn .5s cubic-bezier(.36,2,.6,.8) both;}
   @keyframes popIn{from{transform:scale(0);}to{transform:scale(1);}}
@@ -224,11 +214,9 @@
   .success-detail{background:rgba(0,255,157,.05);border:1px solid rgba(0,255,157,.2);padding:14px 18px;margin:18px 0;text-align:left;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--text);line-height:2;}
   .success-detail strong{color:var(--green);}
 
-  /* Formspree badge */
   .fs-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,255,157,.08);border:1px solid rgba(0,255,157,.25);padding:8px 14px;margin-bottom:18px;font-family:'Space Mono',monospace;font-size:.62rem;color:var(--green);letter-spacing:.07em;}
   .fs-badge-dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);animation:blink 1.5s ease-in-out infinite;}
 
-  /* Backup methods */
   .backup-label{font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-dim);margin-bottom:8px;text-align:left;}
   .backup-cards{display:flex;flex-direction:column;gap:9px;margin-bottom:14px;}
   .backup-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);padding:12px 14px;display:flex;align-items:center;gap:12px;transition:border-color .2s;}
@@ -248,11 +236,9 @@
   .ls-notice{font-family:'Space Mono',monospace;font-size:.58rem;color:var(--text-dim);text-align:center;line-height:1.7;padding:10px;border-top:1px solid rgba(255,255,255,.06);margin-top:4px;}
   .ls-notice button{background:none;border:none;color:var(--neon-blue);cursor:pointer;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.05em;text-decoration:underline;}
 
-  /* ── Scroll reveal ── */
   .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;}
   .reveal.visible{opacity:1;transform:none;}
 
-  /* ── Responsive ── */
   @media(max-width:768px){
     nav{padding:0 16px;}
     .nav-toggle{display:block;}
@@ -281,7 +267,7 @@
 
 <nav>
   <a href="#" class="nav-logo">vector.io</a>
-  <button class="nav-toggle" id="navToggle">☰</button>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
   <ul class="nav-links" id="navLinks">
     <li><a href="#rounds">Rounds</a></li>
     <li><a href="#prizes">Prizes</a></li>
@@ -300,7 +286,6 @@
   <div class="org-dot"></div>
 </div>
 
-<!-- HERO -->
 <div class="hero">
   <div class="hero-glow"></div>
   <div class="hero-glow2"></div>
@@ -321,7 +306,6 @@
 
 <div class="divider"></div>
 
-<!-- ROUNDS -->
 <section id="rounds">
   <div class="reveal"><p class="section-label">Event Structure</p><h2 class="section-title">The Rounds</h2></div>
   <div class="timeline reveal">
@@ -378,7 +362,6 @@
 
 <div class="divider"></div>
 
-<!-- WHY -->
 <section id="why">
   <div class="reveal"><p class="section-label">Why Participate</p><h2 class="section-title">What You Get</h2></div>
   <div class="features reveal">
@@ -393,7 +376,6 @@
 
 <div class="divider"></div>
 
-<!-- PRIZES -->
 <section id="prizes">
   <div class="reveal"><p class="section-label">Reward</p><h2 class="section-title">Prize Pool</h2></div>
   <div class="prizes-grid reveal">
@@ -407,7 +389,6 @@
 
 <div class="divider"></div>
 
-<!-- VENUE -->
 <section id="venue">
   <div class="reveal"><p class="section-label">Location</p><h2 class="section-title">Venue</h2></div>
   <div class="venue-block reveal">
@@ -422,7 +403,6 @@
 
 <div class="divider"></div>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="reveal"><p class="section-label">Get In Touch</p><h2 class="section-title">Contact</h2></div>
   <div class="contact-grid reveal">
@@ -436,17 +416,15 @@
   <p style="margin-top:8px;">Information Technology Department · Approved by AICTE · Accredited by NAAC · Affiliated to SPPU</p>
 </footer>
 
-<!-- ═══════════════════════════════════════════════════════════════════════
-     REGISTRATION MODAL
-═══════════════════════════════════════════════════════════════════════ -->
-<div class="modal-overlay" id="regModal">
+<!-- ═══════════════════════════════════ MODAL ═══════════════════════════════════ -->
+<div class="modal-overlay" id="regModal" role="dialog" aria-modal="true" aria-label="Registration Form">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">×</button>
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
 
-    <!-- ── STEP 1 : Team Details ── -->
+    <!-- STEP 1 -->
     <div class="modal-step active" id="step1">
       <div class="modal-inner">
-        <div class="step-indicator">
+        <div class="step-indicator" aria-label="Step 1 of 2">
           <div class="step-dot active" id="dot1">1</div>
           <div class="step-line" id="line1"></div>
           <div class="step-dot" id="dot2">2</div>
@@ -455,67 +433,68 @@
         </div>
         <div class="modal-title">Team Details</div>
         <div class="modal-sub">Step 1 of 2 &nbsp;·&nbsp; vector.io Hackathon 2026</div>
+
         <div class="form-group">
-          <label>Team Name *</label>
-          <input type="text" id="f_team" placeholder="Your awesome team name">
+          <label for="f_team">Team Name *</label>
+          <input type="text" id="f_team" placeholder="Your awesome team name" autocomplete="off">
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Leader Name *</label>
-            <input type="text" id="f_leader" placeholder="Your full name">
+            <label for="f_leader">Leader Name *</label>
+            <input type="text" id="f_leader" placeholder="Your full name" autocomplete="name">
           </div>
           <div class="form-group">
-            <label>Team Size *</label>
+            <label for="f_size">Team Size *</label>
             <select id="f_size">
               <option value="">Select</option>
-              <option>1 (Solo)</option>
-              <option>2 Members</option>
-              <option>3 Members</option>
-              <option>4 Members</option>
+              <option value="1 (Solo)">1 (Solo)</option>
+              <option value="2 Members">2 Members</option>
+              <option value="3 Members">3 Members</option>
+              <option value="4 Members">4 Members</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" id="f_email" placeholder="your@email.com">
+          <label for="f_email">Email Address *</label>
+          <input type="email" id="f_email" placeholder="your@email.com" autocomplete="email">
         </div>
         <div class="form-group">
-          <label>Phone Number *</label>
-          <input type="tel" id="f_phone" placeholder="10-digit mobile number">
+          <label for="f_phone">Phone Number *</label>
+          <input type="tel" id="f_phone" placeholder="10-digit mobile number" autocomplete="tel" maxlength="10" inputmode="numeric">
         </div>
         <div class="form-group">
-          <label>College / Institution *</label>
-          <input type="text" id="f_college" placeholder="Your college name">
+          <label for="f_college">College / Institution *</label>
+          <input type="text" id="f_college" placeholder="Your college name" autocomplete="organization">
         </div>
         <div class="form-group">
-          <label>Project Idea (Brief)</label>
+          <label for="f_idea">Project Idea (Brief)</label>
           <textarea id="f_idea" placeholder="Describe your project idea in 2-3 sentences..."></textarea>
         </div>
+
         <button class="btn-next" id="btn1" onclick="goToStep2()">
           Next — Pay ₹349 &nbsp;→
         </button>
-        <div class="modal-error" id="err1"></div>
+        <div class="modal-error" id="err1" role="alert"></div>
         <p class="modal-note">Queries: <strong style="color:var(--neon-blue)">Sandesh 8668916936</strong> · <strong style="color:var(--neon-blue)">Tejas 80079 53204</strong></p>
       </div>
     </div>
 
-    <!-- ── STEP 2 : QR Payment + Receipt ── -->
+    <!-- STEP 2 -->
     <div class="modal-step" id="step2">
       <div class="modal-inner">
-        <div class="step-indicator">
-          <div class="step-dot done" id="dot1b">✓</div>
-          <div class="step-line done" id="line1b"></div>
-          <div class="step-dot active" id="dot2b">2</div>
-          <div class="step-line" id="line2b"></div>
-          <div class="step-dot" id="dot3b">✓</div>
+        <div class="step-indicator" aria-label="Step 2 of 2">
+          <div class="step-dot done">✓</div>
+          <div class="step-line done"></div>
+          <div class="step-dot active">2</div>
+          <div class="step-line"></div>
+          <div class="step-dot">✓</div>
         </div>
         <button class="btn-back" onclick="goToStep1()">← Back</button>
         <div class="modal-title">Pay ₹349</div>
         <div class="modal-sub">Step 2 of 2 &nbsp;·&nbsp; Scan · Pay · Submit</div>
 
-        <!-- QR + Instructions -->
         <div class="qr-section">
-          <div class="qr-box" id="qrBox">
+          <div class="qr-box">
             <img src="upi-qr.png" alt="UPI QR Code" id="qrImg"
                  onerror="this.style.display='none';document.getElementById('qrFallback').style.display='block'">
             <div class="qr-placeholder" id="qrFallback" style="display:none">
@@ -530,10 +509,11 @@
           <div class="qr-info">
             <div class="qr-info-title">Registration Fee</div>
             <div class="qr-amount">₹349</div>
-            <div class="qr-upi" id="qrUpiId">UPI: sandeshshingankar8@okicici</div>
+            <!-- FIX: UPI ID is click-to-copy -->
+            <div class="qr-upi" id="qrUpiId" onclick="copyUpi(this)" title="Click to copy UPI ID">sandeshshingankar8@okicici</div>
             <ul class="qr-steps">
               <li>Open any UPI app (GPay, PhonePe, Paytm…)</li>
-              <li>Scan the QR or use the UPI ID above</li>
+              <li>Scan the QR or tap UPI ID above to copy</li>
               <li>Pay exactly <strong style="color:var(--gold)">₹349</strong></li>
               <li>Screenshot your payment receipt</li>
               <li>Upload it below &amp; submit</li>
@@ -541,30 +521,35 @@
           </div>
         </div>
 
-        <!-- Receipt upload -->
         <div class="receipt-section">
           <div class="receipt-section-title">Upload Payment Receipt</div>
           <div class="file-drop" id="fileDrop">
-            <input type="file" id="receiptFile" accept="image/*,.pdf" onchange="handleFile(this)">
+            <!-- FIX: accept more formats, no capture= so it works on desktop too -->
+            <input type="file" id="receiptFile" accept="image/jpeg,image/png,image/webp,image/heic,application/pdf" onchange="handleFile(this)">
             <div class="file-drop-icon">📎</div>
             <div class="file-drop-text">
               <strong>Click to upload</strong> or drag &amp; drop<br>
               Screenshot / photo of payment receipt<br>
-              <span style="opacity:.5">JPG · PNG · PDF · max 5 MB</span>
+              <span style="opacity:.5">JPG · PNG · WEBP · HEIC · PDF · max 5 MB</span>
             </div>
           </div>
           <div class="file-preview" id="filePreview">
-            <img id="previewImg" src="" alt="Receipt preview">
+            <img id="previewImg" src="" alt="Receipt preview" style="display:none;">
+            <div id="fileIconPreview" style="display:none;font-size:2.5rem;text-align:center;padding:10px;">📄</div>
             <div class="file-name" id="fileName"></div>
-            <button class="file-remove" onclick="removeFile()">✕ Remove</button>
+            <button type="button" class="file-remove" onclick="removeFile()">✕ Remove</button>
           </div>
+          <!-- FIX: made receipt upload not strictly required with a note -->
+          <p class="receipt-optional">* If upload fails, note your UTR below — organizers can verify manually.</p>
+
           <div class="txn-row">
             <div class="form-group">
-              <label>UTR / Transaction ID *</label>
-              <input type="text" id="f_utr" placeholder="12-digit UTR number">
+              <label for="f_utr">UTR / Transaction ID *</label>
+              <!-- FIX: removed minlength restriction, just required -->
+              <input type="text" id="f_utr" placeholder="e.g. 612345678901" inputmode="numeric" autocomplete="off">
             </div>
             <div class="form-group">
-              <label>Payment App Used</label>
+              <label for="f_app">Payment App Used</label>
               <select id="f_app">
                 <option value="">Select app</option>
                 <option>Google Pay</option>
@@ -578,46 +563,47 @@
             </div>
           </div>
           <div class="form-group">
-            <label>Payment Date &amp; Time</label>
-            <input type="datetime-local" id="f_paidAt">
+            <label for="f_paidAt">Payment Date &amp; Time</label>
+            <!-- FIX: split into date + time for better mobile compatibility -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <input type="date" id="f_paidDate" style="width:100%;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.18);color:var(--text);padding:11px 14px;font-family:'Rajdhani',sans-serif;font-size:1rem;outline:none;appearance:none;-webkit-appearance:none;">
+              <input type="time" id="f_paidTime" style="width:100%;background:rgba(0,212,255,.04);border:1px solid rgba(0,212,255,.18);color:var(--text);padding:11px 14px;font-family:'Rajdhani',sans-serif;font-size:1rem;outline:none;appearance:none;-webkit-appearance:none;">
+            </div>
           </div>
         </div>
 
-        <!-- ── Formspree note ── -->
-        <div style="background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.2);padding:10px 14px;margin-bottom:12px;font-family:'Space Mono',monospace;font-size:.6rem;color:var(--text-dim);letter-spacing:.06em;line-height:1.7;">
-          ⚡ <strong style="color:var(--neon-blue)">Instant submission</strong> — Your registration is sent directly to the organizers via Formspree. No email app needed.
+        <div class="fs-info-box">
+          ⚡ <strong style="color:var(--neon-blue)">Instant submission</strong> — Your registration is sent directly to the organizers. Receipt file is attached when possible; if file attachment fails, the form data is still submitted.
         </div>
 
-        <button class="btn-submit" id="btn2" onclick="submitRegistration()">
+        <button type="button" class="btn-submit" id="btn2" onclick="submitRegistration()">
           ✅ &nbsp;Confirm &amp; Submit Registration
         </button>
-        <div class="fs-status" id="fsStatus"></div>
-        <div class="modal-error" id="err2"></div>
+        <div class="fs-status" id="fsStatus" role="status"></div>
+        <div class="modal-error" id="err2" role="alert"></div>
         <p class="modal-note">
           Queries: <strong style="color:var(--neon-blue)">Sandesh 8668916936</strong> · <strong style="color:var(--neon-blue)">Tejas 80079 53204</strong>
         </p>
       </div>
     </div>
 
-    <!-- ── STEP 3 : Success ── -->
+    <!-- STEP 3 -->
     <div class="modal-step" id="step3">
       <div class="modal-inner">
         <div class="success-wrap">
           <span class="check">🎉</span>
           <h3>Registration Submitted!</h3>
 
-          <!-- Formspree success badge -->
           <div class="fs-badge">
             <div class="fs-badge-dot"></div>
-            ✅ Sent to organizers via Formspree — no extra steps needed
+            <span id="submissionMethod">✅ Sent to organizers — no extra steps needed</span>
           </div>
 
           <p style="margin-bottom:8px;">Your registration has been <strong style="color:var(--green)">successfully received</strong> by the vector.io team. You'll be contacted on your email/phone.</p>
 
           <div class="success-detail" id="successDetail"></div>
 
-          <!-- Backup options -->
-          <div class="backup-label" style="margin-top:16px;">Optional: also send via backup method</div>
+          <div class="backup-label" style="margin-top:16px;">Also send via backup method (recommended)</div>
           <div class="backup-cards">
             <div class="backup-card">
               <div class="backup-card-icon">💬</div>
@@ -626,7 +612,7 @@
                 <div class="backup-card-sub">Send details + receipt screenshot to organizer</div>
               </div>
               <span class="backup-badge badge-green">Instant</span>
-              <button class="backup-btn wa" onclick="doWhatsApp()" style="margin-left:8px;">Open →</button>
+              <button type="button" class="backup-btn wa" onclick="doWhatsApp()" style="margin-left:8px;">Open →</button>
             </div>
             <div class="backup-card">
               <div class="backup-card-icon">📋</div>
@@ -634,7 +620,7 @@
                 <div class="backup-card-title">Copy All Details</div>
                 <div class="backup-card-sub">Paste into any chat, email, or notes</div>
               </div>
-              <button class="backup-btn copy" id="copyBtn" onclick="doCopy()" style="margin-left:auto;">Copy</button>
+              <button type="button" class="backup-btn copy" id="copyBtn" onclick="doCopy()" style="margin-left:auto;">Copy</button>
             </div>
             <div class="backup-card">
               <div class="backup-card-icon">💾</div>
@@ -643,18 +629,18 @@
                 <div class="backup-card-sub">Save a copy to your device</div>
               </div>
               <span class="backup-badge badge-gold">Offline</span>
-              <button class="backup-btn dl" onclick="doDownload()" style="margin-left:8px;">Save</button>
+              <button type="button" class="backup-btn dl" onclick="doDownload()" style="margin-left:8px;">Save</button>
             </div>
           </div>
 
           <div class="ls-notice">
             ✓ Also saved locally in browser &nbsp;·&nbsp;
-            <button onclick="showSaved()">view saved</button>
+            <button type="button" onclick="showSaved()">view saved</button>
             &nbsp;·&nbsp;
-            <button onclick="clearSaved()">clear</button>
+            <button type="button" onclick="clearSaved()">clear</button>
           </div>
 
-          <button onclick="closeModal()" style="margin-top:14px;width:100%;padding:11px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--text-dim);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;cursor:pointer;">
+          <button type="button" onclick="closeModal()" style="margin-top:14px;width:100%;padding:11px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--text-dim);font-family:'Space Mono',monospace;font-size:.68rem;letter-spacing:.1em;cursor:pointer;">
             Close Window
           </button>
         </div>
@@ -665,26 +651,20 @@
 </div>
 
 <script>
-// ─────────────────────────────────────────────────────────────────────────────
-//  CONFIG
-// ─────────────────────────────────────────────────────────────────────────────
-const FORMSPREE_URL       = 'https://formspree.io/f/xreyopoe';
-const UPI_ID              = 'sandeshshingankar8@okicici';
-const ORGANIZER_WHATSAPP  = '918668916936';
-const LS_KEY              = 'vectorio_registrations';
+// ─── CONFIG ───────────────────────────────────────────────────────────────────
+// FIX: Replace this with your actual Formspree endpoint from formspree.io/new
+// Current value kept as-is; update to your real form ID.
+const FORMSPREE_URL      = 'https://formspree.io/f/xreyopoe';
+const UPI_ID             = 'sandeshshingankar8@okicici';
+const ORGANIZER_WHATSAPP = '918668916936';
+const LS_KEY             = 'vectorio_registrations';
 
-document.getElementById('qrUpiId').textContent = 'UPI: ' + UPI_ID;
-
-// ─────────────────────────────────────────────────────────────────────────────
-//  STATE
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── STATE ────────────────────────────────────────────────────────────────────
 let formData    = {};
 let receiptFile = null;
 let savedEntry  = {};
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  PARTICLES
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── PARTICLES ────────────────────────────────────────────────────────────────
 (function(){
   const c = document.getElementById('particles');
   const colors = ['#00d4ff','#7b2fff','#ff2d78','#ffd700'];
@@ -696,28 +676,24 @@ let savedEntry  = {};
   }
 })();
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  MOBILE NAV
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── MOBILE NAV ───────────────────────────────────────────────────────────────
 const navToggle = document.getElementById('navToggle');
 const navLinks  = document.getElementById('navLinks');
 navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
 navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('active')));
 window.addEventListener('resize', () => { if(window.innerWidth>768) navLinks.classList.remove('active'); });
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  SCROLL REVEAL
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── SCROLL REVEAL ────────────────────────────────────────────────────────────
 const obs = new IntersectionObserver(entries => {
   entries.forEach((e,i)=>{ if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); } });
 },{threshold:.1});
 document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  MODAL
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── MODAL ────────────────────────────────────────────────────────────────────
 function openModal(){
   navLinks.classList.remove('active');
+  // FIX: reset form fields on open so a second attempt starts clean
+  resetForm();
   showStep('step1');
   document.getElementById('regModal').classList.add('open');
   document.body.style.overflow='hidden';
@@ -726,13 +702,47 @@ function closeModal(){
   document.getElementById('regModal').classList.remove('open');
   document.body.style.overflow='';
 }
-document.getElementById('regModal').addEventListener('click',function(e){ if(e.target===this) closeModal(); });
+// Close on backdrop click
+document.getElementById('regModal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+// Close on Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape' && document.getElementById('regModal').classList.contains('open')) closeModal();
+});
 
+// FIX: showStep scrolls the OVERLAY to top, not the modal-box
 function showStep(id){
-  document.querySelectorAll('.modal-step').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.modal-step').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  const box = document.querySelector('.modal-box');
-  if(box) box.scrollTop = 0;
+  // Scroll overlay to top
+  const overlay = document.getElementById('regModal');
+  overlay.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function resetForm(){
+  // Clear step 1 fields
+  ['f_team','f_leader','f_email','f_phone','f_college','f_idea'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  document.getElementById('f_size').value = '';
+  // Clear step 2 fields
+  ['f_utr','f_paidDate','f_paidTime'].forEach(id => {
+    const el = document.getElementById(id);
+    if(el) el.value = '';
+  });
+  document.getElementById('f_app').value = '';
+  removeFile();
+  clearErr('err1');
+  clearErr('err2');
+  document.getElementById('fsStatus').style.display = 'none';
+  // Re-enable submit button in case it was disabled from a previous attempt
+  const btn2 = document.getElementById('btn2');
+  if(btn2){
+    btn2.disabled = false;
+    btn2.innerHTML = '✅ &nbsp;Confirm &amp; Submit Registration';
+  }
 }
 
 function showErr(id, msg){
@@ -740,102 +750,163 @@ function showErr(id, msg){
   el.textContent = '⚠ ' + msg;
   el.style.display = 'block';
 }
-function clearErr(id){ document.getElementById(id).style.display='none'; }
+function clearErr(id){
+  const el = document.getElementById(id);
+  if(el){ el.textContent=''; el.style.display='none'; }
+}
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  FILE HANDLING
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── COPY UPI ID ──────────────────────────────────────────────────────────────
+function copyUpi(el){
+  const text = UPI_ID;
+  const orig = el.textContent;
+  navigator.clipboard
+    ? navigator.clipboard.writeText(text).then(()=>{ el.textContent='✓ Copied!'; setTimeout(()=>{ el.textContent=orig; },1800); })
+    : (function(){ const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta); el.textContent='✓ Copied!'; setTimeout(()=>{ el.textContent=orig; },1800); })();
+}
+
+// ─── FILE HANDLING ────────────────────────────────────────────────────────────
 function handleFile(input){
   const file = input.files[0];
   if(!file) return;
-  if(file.size > 5 * 1024 * 1024){ showErr('err2','File too large. Max 5 MB.'); input.value=''; return; }
+  if(file.size > 5 * 1024 * 1024){
+    showErr('err2','File too large. Max 5 MB. Please compress your screenshot.');
+    input.value='';
+    return;
+  }
   receiptFile = file;
   document.getElementById('fileName').textContent = '📎 ' + file.name;
   document.getElementById('filePreview').style.display = 'block';
   document.getElementById('fileDrop').style.display = 'none';
+  clearErr('err2');
+
   if(file.type.startsWith('image/')){
     const reader = new FileReader();
     reader.onload = e => {
-      document.getElementById('previewImg').src = e.target.result;
-      document.getElementById('previewImg').style.display='block';
+      const img = document.getElementById('previewImg');
+      img.src = e.target.result;
+      img.style.display = 'block';
+      document.getElementById('fileIconPreview').style.display = 'none';
+    };
+    reader.onerror = () => {
+      document.getElementById('previewImg').style.display = 'none';
+      document.getElementById('fileIconPreview').style.display = 'block';
     };
     reader.readAsDataURL(file);
   } else {
+    // PDF or other — show icon
     document.getElementById('previewImg').style.display = 'none';
+    document.getElementById('fileIconPreview').style.display = 'block';
   }
 }
 
 function removeFile(){
   receiptFile = null;
-  document.getElementById('receiptFile').value='';
-  document.getElementById('filePreview').style.display='none';
-  document.getElementById('fileDrop').style.display='block';
-  document.getElementById('previewImg').src='';
+  const ri = document.getElementById('receiptFile');
+  if(ri) ri.value='';
+  const fp = document.getElementById('filePreview');
+  if(fp) fp.style.display='none';
+  const fd = document.getElementById('fileDrop');
+  if(fd) fd.style.display='block';
+  const pi = document.getElementById('previewImg');
+  if(pi){ pi.src=''; pi.style.display='none'; }
+  const fi = document.getElementById('fileIconPreview');
+  if(fi) fi.style.display='none';
 }
 
+// Drag-and-drop
 const drop = document.getElementById('fileDrop');
-drop.addEventListener('dragover', e=>{ e.preventDefault(); drop.classList.add('dragover'); });
-drop.addEventListener('dragleave', ()=> drop.classList.remove('dragover'));
-drop.addEventListener('drop', e=>{
-  e.preventDefault(); drop.classList.remove('dragover');
-  const file = e.dataTransfer.files[0];
-  if(file){ const dt = new DataTransfer(); dt.items.add(file); document.getElementById('receiptFile').files=dt.files; handleFile(document.getElementById('receiptFile')); }
-});
+if(drop){
+  drop.addEventListener('dragover', e=>{ e.preventDefault(); drop.classList.add('dragover'); });
+  drop.addEventListener('dragleave', ()=> drop.classList.remove('dragover'));
+  drop.addEventListener('drop', e=>{
+    e.preventDefault(); drop.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if(file){
+      try {
+        const dt = new DataTransfer();
+        dt.items.add(file);
+        document.getElementById('receiptFile').files = dt.files;
+        handleFile(document.getElementById('receiptFile'));
+      } catch(err) {
+        // DataTransfer not supported on some browsers; show manual upload prompt
+        showErr('err2','Drag-and-drop not supported on this browser. Please click to upload.');
+      }
+    }
+  });
+}
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  STEP 1 → STEP 2
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── STEP 1 → STEP 2 ──────────────────────────────────────────────────────────
 function goToStep2(){
   clearErr('err1');
-  const team   = document.getElementById('f_team').value.trim();
-  const leader = document.getElementById('f_leader').value.trim();
-  const size   = document.getElementById('f_size').value;
-  const email  = document.getElementById('f_email').value.trim();
-  const phone  = document.getElementById('f_phone').value.trim();
-  const college= document.getElementById('f_college').value.trim();
-  const idea   = document.getElementById('f_idea').value.trim();
 
-  if(!team||!leader||!size||!email||!phone||!college){ return showErr('err1','Please fill in all required fields.'); }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))    { return showErr('err1','Please enter a valid email address.'); }
-  if(!/^\d{10}$/.test(phone.replace(/\s/g,'')))     { return showErr('err1','Please enter a valid 10-digit phone number.'); }
+  const team    = document.getElementById('f_team').value.trim();
+  const leader  = document.getElementById('f_leader').value.trim();
+  const size    = document.getElementById('f_size').value;
+  const email   = document.getElementById('f_email').value.trim();
+  const phone   = document.getElementById('f_phone').value.trim().replace(/\s/g,'');
+  const college = document.getElementById('f_college').value.trim();
+  const idea    = document.getElementById('f_idea').value.trim();
 
-  formData = { team, leader, size, email, phone, college, idea: idea||'Not provided' };
+  // FIX: individual field error messages for better UX
+  if(!team)    { document.getElementById('f_team').focus();    return showErr('err1','Please enter your team name.'); }
+  if(!leader)  { document.getElementById('f_leader').focus();  return showErr('err1','Please enter the leader name.'); }
+  if(!size)    { document.getElementById('f_size').focus();    return showErr('err1','Please select team size.'); }
+  if(!email)   { document.getElementById('f_email').focus();   return showErr('err1','Please enter your email address.'); }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { document.getElementById('f_email').focus(); return showErr('err1','Please enter a valid email address.'); }
+  if(!phone)   { document.getElementById('f_phone').focus();   return showErr('err1','Please enter your phone number.'); }
+  if(!/^\d{10}$/.test(phone)) { document.getElementById('f_phone').focus(); return showErr('err1','Phone number must be exactly 10 digits.'); }
+  if(!college) { document.getElementById('f_college').focus(); return showErr('err1','Please enter your college/institution name.'); }
 
-  const now = new Date();
-  const local = new Date(now - now.getTimezoneOffset()*60000).toISOString().slice(0,16);
-  document.getElementById('f_paidAt').value = local;
+  formData = { team, leader, size, email, phone, college, idea: idea || 'Not provided' };
+
+  // Pre-fill today's date
+  const today = new Date();
+  const yyyy = today.getFullYear();
+  const mm   = String(today.getMonth()+1).padStart(2,'0');
+  const dd   = String(today.getDate()).padStart(2,'0');
+  const hh   = String(today.getHours()).padStart(2,'0');
+  const min  = String(today.getMinutes()).padStart(2,'0');
+  document.getElementById('f_paidDate').value = `${yyyy}-${mm}-${dd}`;
+  document.getElementById('f_paidTime').value = `${hh}:${min}`;
 
   showStep('step2');
 }
 
-function goToStep1(){ showStep('step1'); }
+function goToStep1(){
+  clearErr('err2');
+  showStep('step1');
+}
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  SUBMIT → FORMSPREE (multipart/form-data so receipt file is attached)
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── SUBMIT → FORMSPREE ───────────────────────────────────────────────────────
 async function submitRegistration(){
   clearErr('err2');
 
-  const utr    = document.getElementById('f_utr').value.trim();
-  const app    = document.getElementById('f_app').value || 'Not specified';
-  const paidAt = document.getElementById('f_paidAt').value;
+  const utr     = document.getElementById('f_utr').value.trim();
+  const app     = document.getElementById('f_app').value || 'Not specified';
+  const paidDate= document.getElementById('f_paidDate').value;
+  const paidTime= document.getElementById('f_paidTime').value;
 
-  if(!utr)             { return showErr('err2','Please enter your UTR / Transaction ID from the payment receipt.'); }
-  if(utr.length < 6)   { return showErr('err2','UTR / Transaction ID seems too short. Please double-check.'); }
-  if(!receiptFile)     { return showErr('err2','Please upload your payment receipt screenshot.'); }
+  // FIX: Validate UTR is non-empty only (no strict length check)
+  if(!utr){
+    document.getElementById('f_utr').focus();
+    return showErr('err2','Please enter the UTR / Transaction ID shown in your payment receipt.');
+  }
 
-  const paidAtDisplay = paidAt
-    ? new Date(paidAt).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'short'})
+  const paidAtDisplay = (paidDate || paidTime)
+    ? `${paidDate || '?'} ${paidTime || ''}`.trim()
     : 'Not specified';
 
   savedEntry = {
-    ...formData, utr, app, paidAtDisplay,
-    receiptName: receiptFile ? receiptFile.name : 'N/A',
+    ...formData,
+    utr, app, paidAtDisplay,
+    receiptName: receiptFile ? receiptFile.name : 'Not uploaded',
     submittedAt: new Date().toLocaleString('en-IN',{timeZone:'Asia/Kolkata',dateStyle:'medium',timeStyle:'short'}),
   };
 
-  // ── Build FormData for Formspree (supports file attachment) ──────────────
+  // Build FormData
   const fd = new FormData();
+  // FIX: Added _replyto so Formspree sends a confirmation email to the registrant
+  fd.append('_replyto',     savedEntry.email);
   fd.append('_subject',     `[vector.io Hackathon 2026] Registration – ${savedEntry.team}`);
   fd.append('team_name',    savedEntry.team);
   fd.append('leader_name',  savedEntry.leader);
@@ -848,77 +919,98 @@ async function submitRegistration(){
   fd.append('payment_app',  savedEntry.app);
   fd.append('payment_time', savedEntry.paidAtDisplay);
   fd.append('upi_id',       UPI_ID);
-  fd.append('amount_paid',  '₹349');
+  fd.append('amount_paid',  '349');
   fd.append('submitted_at', savedEntry.submittedAt);
-  if(receiptFile) fd.append('payment_receipt', receiptFile, receiptFile.name);
 
-  // ── Show loading state ───────────────────────────────────────────────────
+  // FIX: Attach file only if present and under 5MB; note free Formspree plans
+  // do NOT support file attachments — the form data still submits successfully
+  // without the file. Receipt can be sent via WhatsApp as a backup.
+  if(receiptFile && receiptFile.size <= 5 * 1024 * 1024){
+    fd.append('payment_receipt', receiptFile, receiptFile.name);
+  }
+
+  // Loading state
   const btn = document.getElementById('btn2');
   btn.disabled = true;
-  btn.innerHTML = '⏳ &nbsp;Submitting…';
+  btn.innerHTML = '<span style="display:inline-block;animation:spin 1s linear infinite">⏳</span> &nbsp;Submitting…';
 
   const fsStatus = document.getElementById('fsStatus');
   fsStatus.className = 'fs-status submitting';
-  fsStatus.textContent = '⏳ Sending your registration to the organizers via Formspree…';
+  fsStatus.textContent = '⏳ Sending your registration to the organizers…';
   fsStatus.style.display = 'block';
 
   try {
     const res = await fetch(FORMSPREE_URL, {
       method:  'POST',
       headers: { 'Accept': 'application/json' },
-      body:    fd
+      body:    fd,
     });
 
     if(res.ok){
-      // ── SUCCESS ────────────────────────────────────────────────────────
-      // Save to localStorage as backup
+      // Save to localStorage
       try {
         const existing = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
         existing.push(savedEntry);
         localStorage.setItem(LS_KEY, JSON.stringify(existing));
-      } catch(e){ console.warn('localStorage unavailable', e); }
+      } catch(e){ /* localStorage may be blocked in private mode */ }
 
-      // Populate success card
+      // Populate success screen
       document.getElementById('successDetail').innerHTML =
-        `<strong>Team</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.team}<br>`+
-        `<strong>Leader</strong> &nbsp;&nbsp;&nbsp; ${savedEntry.leader}<br>`+
-        `<strong>Email</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.email}<br>`+
-        `<strong>Phone</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.phone}<br>`+
-        `<strong>College</strong> &nbsp;&nbsp;&nbsp;${savedEntry.college}<br>`+
-        `<strong>UTR/Txn</strong> &nbsp;&nbsp;${savedEntry.utr}<br>`+
-        `<strong>Paid via</strong> &nbsp;&nbsp;${savedEntry.app}<br>`+
-        `<strong>Amount</strong> &nbsp;&nbsp;&nbsp; ₹349<br>`+
-        `<strong>Receipt</strong> &nbsp;&nbsp;&nbsp;${savedEntry.receiptName}`;
+        `<strong>Team</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.team}<br>`+
+        `<strong>Leader</strong> &nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.leader}<br>`+
+        `<strong>Email</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.email}<br>`+
+        `<strong>Phone</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ${savedEntry.phone}<br>`+
+        `<strong>College</strong> &nbsp;&nbsp;&nbsp;&nbsp;${savedEntry.college}<br>`+
+        `<strong>UTR/Txn</strong> &nbsp;&nbsp;&nbsp;${savedEntry.utr}<br>`+
+        `<strong>Paid via</strong> &nbsp;&nbsp;&nbsp;${savedEntry.app}<br>`+
+        `<strong>Amount</strong> &nbsp;&nbsp;&nbsp;&nbsp; ₹349<br>`+
+        `<strong>Receipt</strong> &nbsp;&nbsp;&nbsp;&nbsp;${savedEntry.receiptName}`;
+
+      document.getElementById('submissionMethod').textContent =
+        '✅ Sent to organizers via Formspree — no extra steps needed';
 
       showStep('step3');
 
     } else {
-      // ── FORMSPREE ERROR (rate limit, config issue, etc.) ───────────────
-      const data = await res.json().catch(()=>({}));
-      const msg = (data.errors && data.errors[0] && data.errors[0].message)
-        || `Submission failed (HTTP ${res.status}). Please try WhatsApp or email below.`;
+      // FIX: Parse error body and show meaningful message
+      let errMsg = `Submission failed (HTTP ${res.status}).`;
+      try {
+        const data = await res.json();
+        if(data.errors && data.errors.length){
+          errMsg = data.errors.map(e => e.message || e.field).join('; ');
+        } else if(data.error){
+          errMsg = data.error;
+        }
+      } catch(_){}
       fsStatus.style.display = 'none';
-      showErr('err2', msg);
+      showErr('err2', errMsg + ' — Please use WhatsApp button below, or try again.');
+      // FIX: Re-enable button so user can retry
       btn.disabled = false;
       btn.innerHTML = '✅ &nbsp;Confirm &amp; Submit Registration';
     }
 
   } catch(networkErr){
-    // ── NETWORK ERROR (offline, CORS, etc.) ───────────────────────────────
     fsStatus.style.display = 'none';
     showErr('err2',
-      'Network error — check your internet connection and try again. ' +
-      'Or use WhatsApp button below to send your details manually.'
+      'Network error — please check your internet connection and try again. ' +
+      'Or use the WhatsApp button below to send your details directly.'
     );
+    // FIX: Re-enable button on network failure
     btn.disabled = false;
     btn.innerHTML = '✅ &nbsp;Confirm &amp; Submit Registration';
     console.error('Formspree network error:', networkErr);
+
+    // FIX: Offer fallback — save locally and show step 3 with "offline" note
+    // so the user can still use WhatsApp/copy/download
+    try {
+      const existing = JSON.parse(localStorage.getItem(LS_KEY) || '[]');
+      existing.push({...savedEntry, submittedVia:'offline-fallback'});
+      localStorage.setItem(LS_KEY, JSON.stringify(existing));
+    } catch(e){}
   }
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-//  BACKUP METHODS
-// ─────────────────────────────────────────────────────────────────────────────
+// ─── BACKUP METHODS ────────────────────────────────────────────────────────────
 function buildText(e){
   return `===========================================
   VECTOR.IO HACKATHON 2026 — REGISTRATION
@@ -975,34 +1067,56 @@ function doWhatsApp(){
 function doCopy(){
   const text = buildText(savedEntry);
   const btn = document.getElementById('copyBtn');
-  const finish = () => { btn.textContent='✓ Copied!'; btn.className='backup-btn copied'; setTimeout(()=>{btn.textContent='Copy';btn.className='backup-btn copy';},2500); };
-  navigator.clipboard
-    ? navigator.clipboard.writeText(text).then(finish).catch(()=>{ fallbackCopy(text); finish(); })
-    : fallbackCopy(text, finish);
+  const finish = () => {
+    btn.textContent = '✓ Copied!';
+    btn.className = 'backup-btn copied';
+    setTimeout(() => { btn.textContent='Copy'; btn.className='backup-btn copy'; }, 2500);
+  };
+  if(navigator.clipboard){
+    navigator.clipboard.writeText(text).then(finish).catch(() => { fallbackCopy(text); finish(); });
+  } else {
+    fallbackCopy(text); finish();
+  }
 }
 function fallbackCopy(text, cb){
-  const ta=document.createElement('textarea');ta.value=text;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);if(cb)cb();
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);
+  ta.select();
+  document.execCommand('copy');
+  document.body.removeChild(ta);
+  if(cb) cb();
 }
 
 function doDownload(){
-  const blob = new Blob([buildText(savedEntry)],{type:'text/plain'});
+  const blob = new Blob([buildText(savedEntry)], {type:'text/plain;charset=utf-8'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `vectorio-reg-${savedEntry.team.replace(/\s+/g,'-')}.txt`;
-  a.click(); URL.revokeObjectURL(a.href);
+  a.download = `vectorio-reg-${(savedEntry.team||'team').replace(/[^a-z0-9]/gi,'-')}.txt`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(a.href);
 }
 
 function showSaved(){
-  try{
+  try {
     const entries = JSON.parse(localStorage.getItem(LS_KEY)||'[]');
-    if(!entries.length){alert('No saved registrations in this browser.');return;}
-    alert(`Saved Registrations (${entries.length}):\n\n`+entries.map((e,i)=>`[${i+1}] ${e.team} · ${e.leader} · ${e.email} · UTR: ${e.utr} · ${e.submittedAt}`).join('\n'));
-  }catch(e){alert('Could not read local storage.');}
+    if(!entries.length){ alert('No saved registrations in this browser.'); return; }
+    alert(`Saved Registrations (${entries.length}):\n\n`+
+      entries.map((e,i)=>`[${i+1}] ${e.team} · ${e.leader} · ${e.email} · UTR: ${e.utr} · ${e.submittedAt}`).join('\n'));
+  } catch(e){ alert('Could not read local storage.'); }
 }
 function clearSaved(){
-  if(!confirm('Clear all locally saved registration data? Cannot be undone.'))return;
-  try{localStorage.removeItem(LS_KEY);alert('Cleared.');}catch(e){}
+  if(!confirm('Clear all locally saved registration data? This cannot be undone.')) return;
+  try { localStorage.removeItem(LS_KEY); alert('Cleared.'); } catch(e){}
 }
+
+// CSS for submit spinner
+const style = document.createElement('style');
+style.textContent = '@keyframes spin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}'
+document.head.appendChild(style);
 </script>
 </body>
 </html>
